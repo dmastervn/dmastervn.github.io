@@ -39,7 +39,7 @@ var getbrowser1 = function(){
 		var vr = navigator.userAgent.substring(first+3,last-2);
 	}
 	if (edgecheck > -1 && chromecheck > -1 && safaricheck > -1){
-		result1 = 'Edge';
+		result1 = 'Microsoft Edge';
 		var first = navigator.userAgent.search("Edge");
 		var vr = navigator.userAgent.substring(first + 5);
 	}
@@ -142,6 +142,6 @@ function main(){
 	document.getElementById("os").innerHTML = "<b>Operating System: </b>" + opers;
 	document.getElementById("cookie").innerHTML = "<b>Cookies enable: </b>" + cookie;
 	document.getElementById("screen").innerHTML = "<b>Screen Resolution: </b>" + screen.width + 'x' + screen.height;
-	document.getElementById("color").innerHTML = "<b>Screen Resolution: </b>" + screen.pixelDepth;
+	document.getElementById("color").innerHTML = "<b>Color Resolution: </b>" + screen.pixelDepth;
 	document.getElementById("language").innerHTML = "<b>Browser's Language: </b>" + navigator.language;
 }
