@@ -13,6 +13,8 @@
 <p id="browser"></p>
 <p id="browser2"></p>
 <p id="version"></p>
+<p id="fontdetect"></p>
+<p id="fontf"></p>
 <p id="detector"></p>
 <p id="plugin"></p>
 <p id="name"></p>
@@ -40,14 +42,19 @@ List of Browsers that Second Method Support (Desktop version only): Chrome, Fire
 Browser's Version (based on User Agent)<br>
 Number of plugins installed (based on navigator Object)<br>
 List of Plugins (based on navigator Object)<br>
-Operating System (based on User Agent) - <b>Support: Microsoft Windows, MacOS, Linux, Android, iOS</b><br>
+Operating System (based on User Agent) - <b>Only Support: Microsoft Windows, MacOS, Linux, Android, iOS</b><br>
 Cookies enable (based on navigator Object)<br>
 Screen Resolution (based on screen object)<br>
 Color Resolution (based on screen object)<br>
 Browser's Language (based on Navigator Object)<br>
 <br>
 <b>Identifier:</b><br>
-The identifier is based on extracting special characters from the acquired information of Browser's Name, Browser's Version, Operating System, Number of plugins, Cookies enabled, Screen Resolution and Browser's Language.
+The identifier is based on extracting special characters from the acquired information of Browser's Name, Browser's Version, Operating System, Number of plugins, Cookies enabled, Screen Resolution and Browser's Language.<br>
+<br>
+<b>Font detection:</b><br>
+I implemented method that presented in the paper "Cookieless Monster: Exploring the Ecosystem of Web-based Device Fingerprinting" by KU Leuven and University of California, Santa Barbara.<br>
+<b>Font detection</b> only work with <b>Google Chrome (61) & Opera (48) - Desktop version</b>, and it only can detect 3 types of font: <b>Times New Roman, Arial and Calibri.</b><br>
+<font color="red"><b>When you change the font of your browser, you need to hit refresh the page so that fingerprinting can update the results</b></font>
 
 </p>
 </body>

@@ -59,6 +59,30 @@ var getbrowser1 = function(){
     };
 	
 }
+
+//Implemented font detection method from the paper "Cookieless Monster: Exploring the Ecosystem of Web-based Device Fingerprinting" by University of California, Santa Barbara and KU Leuven
+function get_text_dimensions(font){
+var textWidth;
+var textHeight;
+h = document.getElementsByTagName("BODY")[0];
+d = document.createElement("DIV");
+s = document.createElement("SPAN");
+d.appendChild(s);
+d.style.fontFamily = font;
+s.style.fontFamily = font;
+s.style.fontSize = "72px";
+s.innerHTML = "font_detection";
+h.appendChild(d);
+textWidth = s.offsetWidth;
+textHeight = s.offsetHeight;
+h.removeChild(d);
+return {
+        textWidth: textWidth,
+        textHeight: textHeight
+    };
+}
+
+
 var getbrowser2 = function(){
 	var result2 = 'Not Support This Browser';
 	if (!!window.chrome && !!window.chrome.webstore){
@@ -121,6 +145,20 @@ var cookieenable = function(){
 }
 
 function main(){
+	var fm = "Not work (Font detection only work with <b>Google Chrome (61) & Opera (48) - Desktop version</b>, and it only can detect 3 type of font: <b>Times New Roman, Arial and Calibri</b>)";
+	var tw = get_text_dimensions().textWidth;
+	var th = get_text_dimensions().textHeight;
+	
+	if(get_text_dimensions().textWidth ==416 && get_text_dimensions().textHeight == 80){
+		fm ="Times New Roman";
+	}
+	if(get_text_dimensions().textWidth ==452 && get_text_dimensions().textHeight == 80){
+		fm ="Arial";
+	}
+	if(get_text_dimensions().textWidth ==434 && get_text_dimensions().textHeight == 88){
+		fm ="Calibri";
+	}
+	
 	var bn= getbrowser1().result1;
 	var bn2= getbrowser2();
 	var ver= getbrowser1().vr;
@@ -138,6 +176,10 @@ function main(){
 	var q7 = screen.width.toString();
 	var q7s = screen.height.toString()
 	var q7f = q7.charAt(0) + q7s.charAt(0);
+	
+	document.getElementById("fontdetect").innerHTML = "<b>Font size: </b>" + tw + ' x ' + th;
+	document.getElementById("fontf").innerHTML = "<b>Font: </b>" + fm;
+	
 	document.getElementById("identifier").innerHTML = "<b> Identifier: </b>" + q1f + q2f + q3f + q4f + q5f + q6f + q7f;
 	document.getElementById("browser").innerHTML = "<b>Browser's name by first method: </b>" + bn;
 	document.getElementById("version").innerHTML = "<b>Browser's Version: </b>" + ver;
