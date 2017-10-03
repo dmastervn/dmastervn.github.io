@@ -130,9 +130,6 @@ function main(){
 	var q2 = bn.charAt(0) + bn.charAt(1);
 	var q2f = q2.toUpperCase();
 	var q3f = ver.charAt(0) + ver.charAt(1);
-	if (ver.charAt(1) ='.'){
-		var q3f = ver.charAt(0) + ver.charAt(2);
-	}
 	var q4f = cookie.charAt(0);
 	var q5f = getplugin();
 	var q6 = navigator.language;
