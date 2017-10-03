@@ -145,7 +145,7 @@ var cookieenable = function(){
 }
 
 function main(){
-	var fm = "Not work (Font detection only work with <b>Google Chrome (61) & Opera (48) - Desktop version</b>, and it only can detect 3 type of font: <b>Times New Roman, Arial and Calibri</b>)";
+	var fm = "Not work (Font detection only work with <b>Google Chrome (61) & Opera (48) - Windows version</b>, and it only can detect 3 type of font: <b>Times New Roman, Arial and Calibri</b>)";
 	var tw = get_text_dimensions().textWidth;
 	var th = get_text_dimensions().textHeight;
 	
@@ -157,6 +157,9 @@ function main(){
 	}
 	if(get_text_dimensions().textWidth ==434 && get_text_dimensions().textHeight == 88){
 		fm ="Calibri";
+	}
+	if(get_text_dimensions().textWidth ==416 && get_text_dimensions().textHeight == 83){
+		fm ="Times";
 	}
 	
 	var bn= getbrowser1().result1;
