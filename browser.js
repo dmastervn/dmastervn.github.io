@@ -1,16 +1,6 @@
 var getbrowser1 = function(){
 	var result1 = 'Not support browser';
     var x = navigator.userAgent;
-	//var chromecheck = x.indexOf("Chrome");
-	//var safaricheck = x.indexOf("Safari");
-	//var safaricheck2 = x.indexOf("Version");
-	//var firefoxcheck = x.indexOf("Firefox");
-	//var operacheck = x.indexOf("OPR");
-	//var oldoperacheck = x.indexOf("Opera");
-	//var iecheck = x.indexOf("Trident");
-	//var edgecheck = x.indexOf("Edge");
-	//var nexuscheck = x.indexOf("Nexus");
-	//var crioscheck = x.indexOf("CriOS");
 	if (x.indexOf("Chrome") > -1 && x.indexOf("Safari") > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("Chrome");
