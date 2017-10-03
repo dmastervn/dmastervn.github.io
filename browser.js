@@ -57,6 +57,12 @@ var getbrowser1 = function(){
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first+6,last);
 	}
+	if (x.indexOf("FxiOS") > -1){
+		result1 = 'Mozilla Firefox';
+		var first = navigator.userAgent.search("FxiOS");
+		var last = navigator.userAgent.search("Safari");
+		var vr = navigator.userAgent.substring(first+6,last);
+	}
 	return {
         result1: result1,
         vr: vr
