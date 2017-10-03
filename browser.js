@@ -10,6 +10,7 @@ var getbrowser1 = function(){
 	var iecheck = x.indexOf("Trident");
 	var edgecheck = x.indexOf("Edge");
 	var nexuscheck = x.indexOf("Nexus");
+	var crioscheck = x.indexOf("CriOS");
 	if (chromecheck > -1 && safaricheck > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("Chrome");
@@ -49,6 +50,12 @@ var getbrowser1 = function(){
 		var first = navigator.userAgent.search("Chrome");
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first+7,last);
+	}
+	if (safaricheck > -1 && crioscheck > -1){
+		result1 = 'Google Chrome';
+		var first = navigator.userAgent.search("CriOS");
+		var last = navigator.userAgent.search("Safari");
+		var vr = navigator.userAgent.substring(first+6,last);
 	}
 	return {
         result1: result1,
