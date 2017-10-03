@@ -1,57 +1,57 @@
 var getbrowser1 = function(){
 	var result1 = 'Not support browser';
-    var x = navigator.userAgent;
-	var chromecheck = x.indexOf("Chrome");
-	var safaricheck = x.indexOf("Safari");
-	var safaricheck2 = x.indexOf("Version");
-	var firefoxcheck = x.indexOf("Firefox");
-	var operacheck = x.indexOf("OPR");
-	var oldoperacheck = x.indexOf("Opera");
-	var iecheck = x.indexOf("Trident");
-	var edgecheck = x.indexOf("Edge");
-	var nexuscheck = x.indexOf("Nexus");
-	var crioscheck = x.indexOf("CriOS");
-	if (chromecheck > -1 && safaricheck > -1){
+    //var x = navigator.userAgent;
+	//var chromecheck = x.indexOf("Chrome");
+	//var safaricheck = x.indexOf("Safari");
+	//var safaricheck2 = x.indexOf("Version");
+	//var firefoxcheck = x.indexOf("Firefox");
+	//var operacheck = x.indexOf("OPR");
+	//var oldoperacheck = x.indexOf("Opera");
+	//var iecheck = x.indexOf("Trident");
+	//var edgecheck = x.indexOf("Edge");
+	//var nexuscheck = x.indexOf("Nexus");
+	//var crioscheck = x.indexOf("CriOS");
+	if (x.indexOf("Chrome") > -1 && x.indexOf("Safari") > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("Chrome");
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first+7,last);
 	}
-	if (firefoxcheck > -1){
+	if (x.indexOf("Firefox") > -1){
 		result1 = 'Mozilla Firefox';
 		var first = navigator.userAgent.search("rv");
 		var last = navigator.userAgent.search("Gecko");
 		var vr = navigator.userAgent.substring(first+3,last-2);
 	}
-	if (safaricheck > -1 && safaricheck2 > -1){
+	if (x.indexOf("Safari") > -1 && x.indexOf("Version") > -1){
 		result1 = 'Safari';
 		var first = navigator.userAgent.search("Version");
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first + 8,last-1);
 	}
-	if (operacheck > -1 && chromecheck > -1 && safaricheck > -1){
+	if (x.indexOf("OPR") > -1 && x.indexOf("Chrome") > -1 && x.indexOf("Safari") > -1){
 		result1 = 'Opera';
 		var first = navigator.userAgent.search("OPR");
 		var vr = navigator.userAgent.substring(first + 4);
 	}
-	if (iecheck > -1){
+	if (x.indexOf("Trident") > -1){
 		result1 = 'Internet Explorer';
 		var first = navigator.userAgent.search("rv");
 		var last = navigator.userAgent.search("like");
 		var vr = navigator.userAgent.substring(first+3,last-2);
 	}
-	if (edgecheck > -1 && chromecheck > -1 && safaricheck > -1){
+	if (x.indexOf("Edge") > -1 && x.indexOf("Chrome") > -1 && x.indexOf("Safari") > -1){
 		result1 = 'Microsoft Edge';
 		var first = navigator.userAgent.search("Edge");
 		var vr = navigator.userAgent.substring(first + 5);
 	}
-	if (operacheck > -1 && chromecheck > -1 && safaricheck > -1 && nexuscheck > -1){
+	if (x.indexOf("OPR") > -1 && x.indexOf("Chrome") > -1 && x.indexOf("Safari") > -1 && x.indexOf("Nexus") > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("Chrome");
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first+7,last);
 	}
-	if (safaricheck > -1 && crioscheck > -1){
+	if (x.indexOf("Safari") > -1 && x.indexOf("CriOS") > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("CriOS");
 		var last = navigator.userAgent.search("Safari");
