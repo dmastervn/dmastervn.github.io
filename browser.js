@@ -9,6 +9,7 @@ var getbrowser1 = function(){
 	var oldoperacheck = x.indexOf("Opera");
 	var iecheck = x.indexOf("Trident");
 	var edgecheck = x.indexOf("Edge");
+	var nexuscheck = x.indexOf("Nexus");
 	if (chromecheck > -1 && safaricheck > -1){
 		result1 = 'Google Chrome';
 		var first = navigator.userAgent.search("Chrome");
@@ -42,6 +43,11 @@ var getbrowser1 = function(){
 		result1 = 'Microsoft Edge';
 		var first = navigator.userAgent.search("Edge");
 		var vr = navigator.userAgent.substring(first + 5);
+	}
+	if (operacheck > -1 && chromecheck > -1 && safaricheck > -1 && nexuscheck > -1){
+		result1 = 'Google Chrome';
+		var last = navigator.userAgent.search("Safari");
+		var vr = navigator.userAgent.substring(first+7,last);
 	}
 	return {
         result1: result1,
