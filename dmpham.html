@@ -6,14 +6,14 @@
    Course: CS558<br>
    Fingerprinting Project<br>
 </b></p>
-<p style="color:Red"><b>Click the button "Click me" to show detail information of Fingerprinting</b></p>
+<p style="color:Red"><b>Click the button "Click me" to start Fingerprinting and show detail information</b></p>
 <script type="text/javascript" src="browser.js">
 </script>
 <button onclick="main()">Click me</button>
 <p id="identifier"></p>
 <p id="browser"></p>
-<p id="version"></p>
 <p id="browser2"></p>
+<p id="version"></p>
 <p id="detector"></p>
 <p id="plugin"></p>
 <p id="name"></p>
@@ -23,6 +23,33 @@
 <p id="color"></p>
 <p id="language"></p>
 <p style="color:Red"><font size="6"><b>Description:</b></font></p>
-<p></p>
+<p>
+<b>User's browser family:</b><br>
+<br>
+I implemented two different methods to find the information about User's browser family. <br>
+<br>
+<b>The first method:</b><br>
+Parsing the characters obtained from the User Agent via <b>navigator.userAgent</b>. 
+Each browser will have information in the User Agent that contains browser features such as browser's name, browser's version, etc.
+I rely on these features to distinguish between browsers and give information about the User's browser family. 
+List of Browsers that First Method Support: Chrome (Desktop & Mobile version), Firefox (Desktop & Mobile version), Safari (Desktop & Mobile version), Opera (Desktop & Mobile version), Internet Explorer and Edge.<br>
+<br>
+<b>The second method:</b><br> Distinguishes based on the unique features of each browser with Javascript Objects (Windows Object and HTML DOM Document Object).
+List of Browsers that Second Method Support (Desktop version only): Chrome, Firefox, Safari, Opera, Internet Explorer and Edge.<br>
+<br>
+<b>In addition, I also fingerprint the following information:</b> <br>
+Browser's Version (based on User Agent)<br>
+Number of plugins installed (based on navigator Object)<br>
+List of Plugins (based on navigator Object)<br>
+Operating System (based on User Agent)<br>
+Cookies enable (based on navigator Object)<br>
+Screen Resolution (based on screen object)<br>
+Color Resolution (based on screen object)<br>
+Browser's Language (based on Navigator Object)<br>
+<br>
+<b>Identifier:</b><br>
+The identifier is based on extracting special characters from the acquired information of Browser's Name, Browser's Version, Operating System, Number of plugins, Cookies enabled, Screen Resolution and Browser's Language.
+
+</p>
 </body>
 </html>
