@@ -1,6 +1,6 @@
 var getbrowser1 = function(){
 	var result1 = 'Not support browser';
-    //var x = navigator.userAgent;
+    var x = navigator.userAgent;
 	//var chromecheck = x.indexOf("Chrome");
 	//var safaricheck = x.indexOf("Safari");
 	//var safaricheck2 = x.indexOf("Version");
