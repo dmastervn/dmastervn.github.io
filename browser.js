@@ -46,6 +46,7 @@ var getbrowser1 = function(){
 	}
 	if (operacheck > -1 && chromecheck > -1 && safaricheck > -1 && nexuscheck > -1){
 		result1 = 'Google Chrome';
+		var first = navigator.userAgent.search("Chrome");
 		var last = navigator.userAgent.search("Safari");
 		var vr = navigator.userAgent.substring(first+7,last);
 	}
